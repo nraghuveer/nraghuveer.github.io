@@ -21,19 +21,56 @@
 title: Raghuveer's Blog
 email: raghuveernaraharisetti@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+  Raghuveer is a software engineer currently based in USA. He occasionaly blogs about programming, concurrency, compilers and backend engineering. He is currenly a graduate student and UW-Milwaukee and open for new oppurtunities.
+aseurl: "" # the subpath of your site, e.g. /blog
+baseurl: ""
+domain: nraghuveer.github.io
+url: "https://nraghuveer.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: raghu.veer
 github_username:  nraghuveer
+paginate: 5
+paginate_path: "/blog/page:num"
+# jekyll-tagging (optional)
+tag_permalink_style: pretty
+tag_page_layout: tag_page
+tag_page_dir: tag
 
 # Build settings
 # theme: minima
 theme: jekyll-dash
 plugins:
   - jekyll-feed
+  - jekyll/tagging
+
+dash:
+  # the way how dates should be displayed
+  date_format: "%b %-d, %Y"
+
+  # (optional) discqus comment configuration
+  disqus:
+    shortname: <your-disqus-shortname>  
+
+  # the animation speed of the post scroll-in effect
+  animation_speed: 50
+
+  # wether to enable Right-to-Left support or not
+  rtl: false
+
+  # Replaces the default avatar provider (gravatar)
+  #avatar_source: github
+  #github_username: bitbrain
+  #avatar_source: local
+  #avatar_path: /assets/avatar.png
+
+  # generate social links in footer
+  # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
+  social_links:
+    - url: https://twitter.com/raghu.veer
+      icon: twitter-square
+      color: cyan
+    - url: https://github.com/nraghuveer
+      icon: github-square
+      color: purple
 
 # Exclude from processing.
 # The following items will not be processed, by default.
