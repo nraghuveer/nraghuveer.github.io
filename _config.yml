@@ -26,14 +26,15 @@ aseurl: "" # the subpath of your site, e.g. /blog
 baseurl: ""
 domain: nraghuveer.github.io
 url: "https://nraghuveer.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: raghu.veer
+twitter_username: raghu_veerN
 github_username: nraghuveer
 paginate: 5
-paginate_path: "/blog/page:num"
+paginate_path: "/page:num"
 # jekyll-tagging (optional)
 tag_permalink_style: pretty
 tag_page_layout: tag_page
 tag_page_dir: tag
+future: true
 
 # Build settings
 # theme: minima
