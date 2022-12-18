@@ -21,13 +21,13 @@
 title: Raghuveer's Blog
 email: raghuveernaraharisetti@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Raghuveer is a software engineer currently based in USA. He occasionaly blogs about programming, concurrency, compilers and backend engineering. He is currenly a graduate student and UW-Milwaukee and open for new oppurtunities.
+  Raghuveer is a software engineer currently based in USA. He occasionaly blogs about programming, concurrency, compilers, GPUs and backend engineering. He is currenly a graduate student at UW-Milwaukee and open for new oppurtunities.
 aseurl: "" # the subpath of your site, e.g. /blog
 baseurl: ""
 domain: nraghuveer.github.io
 url: "https://nraghuveer.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: raghu.veer
-github_username:  nraghuveer
+github_username: nraghuveer
 paginate: 5
 paginate_path: "/blog/page:num"
 # jekyll-tagging (optional)
@@ -48,7 +48,7 @@ dash:
 
   # (optional) discqus comment configuration
   disqus:
-    shortname: <your-disqus-shortname>  
+    shortname: <your-disqus-shortname>
 
   # the animation speed of the post scroll-in effect
   animation_speed: 50
@@ -71,7 +71,6 @@ dash:
     - url: https://github.com/nraghuveer
       icon: github-square
       color: purple
-
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
