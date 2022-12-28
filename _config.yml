@@ -7,93 +7,82 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
 title: Raghuveer Naraharisetti
+author:
+  name: Raghuveer
+  url: "https://nraghuveer.github.io"
+url: "https://nraghuveer.github.io"
 email: raghuveernaraharisetti@gmail.com
-description: My notes about the stuff that I care out!
-aseurl: "" # the subpath of your site, e.g. /blog
-baseurl: ""
-domain: nraghuveer.github.io
-url: "https://nraghuveer.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: raghu_veerN
-github_username: nraghuveer
-paginate: 5
-paginate_path: "/page:num"
-# jekyll-tagging (optional)
-tag_permalink_style: pretty
-tag_page_layout: tag_page
-tag_page_dir: tag
-future: true
+description: >
+  I share my notes, opinions about the stuff I find interesting at somepoint in my life.
+baseurl: "" # the subpath of your site, e.g. /blog
+repository: nraghuveer/nraghuveer.github.io
+
+remote_theme: fongandrew/hydeout
+
+disqus:
+  shortname: "blog-nraghuveer-githubio"
+# google_analytics: "UA-119528295-1"
+
+twitter:
+  username: raghu_veerN
+  card: summary
+
+github:
+  username: nraghuveer
+
+linkedin:
+  username: nraghuveer
+
+social:
+  name: Raghuveer Naraharisetti
+  username: nraghuveer
+  links:
+    - https://twitter.com/raghu_veerN
+    - https://github.com/nraghuveer
+    - https://linkedin.com/in/nraghuveer
+
+# Dirs
+layout_dir: _layouts
+posts_dir: _posts
 
 # Build settings
-# theme: minima
-# theme: jekyll-dash
-remote_theme: fongandrew/hydeout
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  parse_block_html: true
+highlighter: rouge
 plugins:
   - jekyll-feed
-  - jekyll/tagging
-  - jekyll-notion
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
+  - jekyll-github-metadata
+  - jekyll-redirect-from
+  - jekyll-paginate
 
-dash:
-  # the way how dates should be displayed
-  date_format: "%b %-d, %Y"
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+paginate: 5
+paginate_path: "/blog/page:num"
+permalink: /blog/:categories/:year/:month/:day/:title:output_ext
 
-  # (optional) discqus comment configuration
-  disqus:
-    shortname: raghuveer
+feed:
+  path: /blog/feed.xml
 
-  # the animation speed of the post scroll-in effect
-  animation_speed: 50
-
-  # wether to enable Right-to-Left support or not
-  rtl: false
-
-  # Replaces the default avatar provider (gravatar)
-  #avatar_source: github
-  #github_username: bitbrain
-  #avatar_source: local
-  #avatar_path: /assets/avatar.png
-
-  # generate social links in footer
-  # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
-  social_links:
-    - url: https://twitter.com/raghu.veer
-      icon: twitter-square
-      color: cyan
-    - url: https://github.com/nraghuveer
-      icon: github-square
-      color: purple
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-notion:
-  databases:
-    - id: 4d9d9752251844428a6ca0fdff59ab07
-      collection: posts
+# Sidebar link settings
+sidebar_home_link: true
+sidebar_blog_link: "/blog" # By default, your home page is your blog
+# page. If you change your paginate_path,
+# set this to the root of the paginate_path
+# to enable a separate blog link.
