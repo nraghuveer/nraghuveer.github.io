@@ -18,10 +18,9 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Raghuveer's Blog
+title: Raghuveer Naraharisetti
 email: raghuveernaraharisetti@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Raghuveer is a software engineer currently based in USA. He occasionaly blogs about programming, concurrency, compilers, GPUs and backend engineering. He is currenly a graduate student at UW-Milwaukee and open for new oppurtunities.
+description: My notes about the stuff that I care out!
 aseurl: "" # the subpath of your site, e.g. /blog
 baseurl: ""
 domain: nraghuveer.github.io
