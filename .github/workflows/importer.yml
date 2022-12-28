@@ -2,8 +2,6 @@ name: Jekyll importer
 
 on:
   push:
-    branches:
-      - main
   schedule:
     - cron: "0 */1 * * *"
 
@@ -21,15 +19,6 @@ jobs:
           # runs 'bundle install' and caches installed gems automatically
           bundler-cache: true
 
-      # Clean tumblr posts before reimporting them
-      - run: rm -rf _posts/tumblr
-
-      - run: |
-          bundle exec ruby _scripts/tumblr-import.rb
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "17"
-
       - run: npm install
 
       - run: node _scripts/notion-import.js
@@ -39,7 +28,7 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         with:
           commit_message: Update Importer posts
           branch: master
