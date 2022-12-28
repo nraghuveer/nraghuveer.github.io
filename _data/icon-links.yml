@@ -1,0 +1,15 @@
+- name: email
+  url: mailto:raghuveernaraharisetti@gmail.com
+  class: fas fa-envelope
+
+- name: twitter
+  url: https://twitter.com/raghu_veerN
+  class: fab fa-twitter
+
+- name: github
+  url: https://github.com/nraghuveer
+  class: fab fa-github-alt
+
+- name: linkedin
+  url: https://linkedin.com/in/nraghuveer
+  class: fab fa-linkedin

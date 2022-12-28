@@ -1,25 +1,32 @@
 ---
-layout: index
+layout: tags
 title: Blog
 ---
-{% for post in site.posts  %}
-    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
 
-    {% if forloop.first %}
-    <h2 id="{{ this_year }}-ref">{{this_year}}</h2>
-    <ul>
-    {% endif %}
+{% comment %}
+Stolen from https://stackoverflow.com/a/20777475/10913628
+{% endcomment %}
 
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-
-    {% if forloop.last %}
-    </ul>
-    {% else %}
-        {% if this_year != next_year %}
-        </ul>
-        <h2 id="{{ next_year }}-ref">{{next_year}}</h2>
-        <ul>
-        {% endif %}
-    {% endif %}
+{% for post in site.posts %}
+  {% assign currentdate = post.date | date: "%Y" %}
+  {% if currentdate != date %}
+    {% unless forloop.first %}
+  </ul>
+  <hr/>
+	{% endunless %}
+  <h2 id="{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
+  <ul class="posts-list">
+    {% assign date = currentdate %}
+  {% endif %}
+  <li>
+    <h3>
+      <a href="{{ post.url | relative_url }}">
+        {{ post.title }}
+        <small>{{ post.date | date_to_string }}</small>
+      </a>
+    </h3>
+  </li>
+  {% if forloop.last %}
+  </ul>
+  {% endif %}
 {% endfor %}
