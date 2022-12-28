@@ -1,9 +1,10 @@
 _site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
 .env
-.gitignore
+.sass-cache
+.jekyll-metadata
+_drafts/
 Gemfile.lock
+vendor/
+.DS_Store
 .bundle
+node_modules
