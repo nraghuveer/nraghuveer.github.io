@@ -1,5 +1,5 @@
 ---
-layout: tags
+layout: index
 title: Blog
 ---
 {% for post in site.posts  %}
