@@ -37,8 +37,9 @@ tag_page_dir: tag
 future: true
 
 # Build settings
-theme: minima
+# theme: minima
 # theme: jekyll-dash
+remote_theme: fongandrew/hydeout
 plugins:
   - jekyll-feed
   - jekyll/tagging
