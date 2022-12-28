@@ -37,11 +37,12 @@ tag_page_dir: tag
 future: true
 
 # Build settings
-# theme: minima
-theme: jekyll-dash
+theme: minima
+# theme: jekyll-dash
 plugins:
   - jekyll-feed
   - jekyll/tagging
+  - jekyll-notion
 
 dash:
   # the way how dates should be displayed
@@ -49,7 +50,7 @@ dash:
 
   # (optional) discqus comment configuration
   disqus:
-    shortname: <your-disqus-shortname>
+    shortname: raghuveer
 
   # the animation speed of the post scroll-in effect
   animation_speed: 50
@@ -91,3 +92,8 @@ dash:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+notion:
+  databases:
+    - id: 4d9d9752251844428a6ca0fdff59ab07
+      collection: posts
