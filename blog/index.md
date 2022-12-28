@@ -10,23 +10,8 @@ Stolen from https://stackoverflow.com/a/20777475/10913628
 {% for post in site.posts %}
   {% assign currentdate = post.date | date: "%Y" %}
   {% if currentdate != date %}
-    {% unless forloop.first %}
-  </ul>
-  <hr/>
-	{% endunless %}
-  <h2 id="{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
-  <ul class="posts-list">
+    <li id="y{{currentdate}}">{{ currentdate }}</li>
     {% assign date = currentdate %}
   {% endif %}
-  <li>
-    <h3>
-      <a href="{{ post.url | relative_url }}">
-        {{ post.title }}
-        <small>{{ post.date | date_to_string }}</small>
-      </a>
-    </h3>
-  </li>
-  {% if forloop.last %}
-  </ul>
-  {% endif %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
