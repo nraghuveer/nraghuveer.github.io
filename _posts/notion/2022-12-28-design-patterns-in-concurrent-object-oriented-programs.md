@@ -65,7 +65,7 @@ Let's consider a distributed logging service, where there are multiple clients t
 The central logging server then writes the records to various output streams or devices (some database or message queue or object storage like s3
 
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0a4a3b44-fe94-4745-b0ed-69e067869891/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T150932Z&X-Amz-Expires=3600&X-Amz-Signature=a6390f956041428d83921ced7137fd11263a71ad03be4278b4124b33231a5c3b&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0a4a3b44-fe94-4745-b0ed-69e067869891/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T161222Z&X-Amz-Expires=3600&X-Amz-Signature=6ea25d5deebcce1a8bf78d5c5783408a5cd06cf854b07cd7888ff4f86e998ad3&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 The most intuitive way to develop a concurrent logging server is to use multiple threads that can process multiple client concurrently. This way, we can synchronously accept network connections and spawn a thread-per-connection to handle client record.
@@ -119,7 +119,7 @@ Key components
 	3. Uses synchronous demultiplexer to wait for events on its handle set
 	4. Dispatches an event to appropriate hook method on registered handlers to process the event
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8d268d3d-cb3d-4dc1-b3e1-05dd21a757d9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T150932Z&X-Amz-Expires=3600&X-Amz-Signature=707d4e0eeef57eaa4fc3def26abc3d350440f74f2679cacd057a45f83a77094f&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/8d268d3d-cb3d-4dc1-b3e1-05dd21a757d9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T161222Z&X-Amz-Expires=3600&X-Amz-Signature=fc3b3990ca609ec0fa383a5e5ce0b63ceb96bf3b17fe41f593bfaed980c0a16b&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ### Benefits
@@ -176,7 +176,7 @@ Key Components
 	1. Invokes async operations on async operation processor
 	2. With each call, it associates a appropriate completion handler
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c6428628-75ac-430a-a36f-1f33fd9d7ad3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T150932Z&X-Amz-Expires=3600&X-Amz-Signature=a808394179f1706c9d99f81a5632fafbe1cb5cddd5c85b1b3c4a328ba62d9025&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c6428628-75ac-430a-a36f-1f33fd9d7ad3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T161222Z&X-Amz-Expires=3600&X-Amz-Signature=0fdc5d191f5aa1f39dab107b9f353d8e161aeb144d2d1d4f093967f69bae4799&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ### Benefits
@@ -227,7 +227,7 @@ Lets assume, we have a lot of threads trying to communicate with each other, in 
 The proposed Active Object Design decouples method invocation on the object from method execution. Typically in passive objects, the method execution happens in the same thread of control of the method invocation. In Active or Concurrent objects, the method execution will occur in a seperate thread and method invocation in the client’s thread of control, so both are different threads.
 
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6626d90e-81e2-410a-a412-68c293cb9ad8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T150932Z&X-Amz-Expires=3600&X-Amz-Signature=377698f195b3a831777b55c00de1e274086e1825b7a48562a3b50922529f9a96&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6626d90e-81e2-410a-a412-68c293cb9ad8/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T161222Z&X-Amz-Expires=3600&X-Amz-Signature=d363384b9cb9a40cdf6642e77e9f46820eee15978af911cf0ce6aba888354963&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 - When client program invokes a method on proxy, the proxy constructs a method request (parameters, context and some other information as a object) and inserts it into the Activation List (some kind of bounded buffer) and proxy returns a “Future” object to the client program, using which the result of the actual method execution can be fetched.
 - Activation List lies in the Active Object’s Thread of control.
@@ -272,7 +272,7 @@ Each monitor object contains its own monitor lock. These are generally mutex loc
 Java uses similar concept, where every object is a monitor object. marking a method `synchronized` makes the implicity acquire and release the monitor lock associated with the object. We can also perform `wait` and `nofify` and `notifyall` on the monitor object.
 
 
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b3b7f29b-3a1f-47dc-9699-fcf047758c5a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T150932Z&X-Amz-Expires=3600&X-Amz-Signature=796edc6dd5d3ac8568d73627769674d28352d788b061a1e84c59e4d1e4696e4d&X-Amz-SignedHeaders=host&x-id=GetObject)
+![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b3b7f29b-3a1f-47dc-9699-fcf047758c5a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221229%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221229T161222Z&X-Amz-Expires=3600&X-Amz-Signature=a56d96ce8b67e0e1dc149e0dc4a8d727493c4a6b535929c5fed00f9931a9276e&X-Amz-SignedHeaders=host&x-id=GetObject)
 
 
 ### Benefits
