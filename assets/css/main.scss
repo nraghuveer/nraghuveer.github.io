@@ -1,5 +1,5 @@
 $sidebar-bg-color: #882d17;
-$sidebar-sticky: true;
+$sidebar-sticky: false;
 $link-color: $sidebar-bg-color;
 $sidebar-width: 10rem;
 @import "hydeout";
@@ -60,7 +60,7 @@ $sidebar-width: 10rem;
 }
 
 :root {
-  --color-primary: #882d17;
+  --color-primary: $sidebar-bg-color;
 }
 
 p {
