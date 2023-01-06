@@ -13,14 +13,14 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Raghuveer Naraharisetti
+title: Raghuveer
 author:
   name: Raghuveer
   url: "https://nraghuveer.github.io"
 url: "https://nraghuveer.github.io"
 email: raghuveernaraharisetti@gmail.com
 description: >
-  I share my notes, opinions about the stuff I find interesting at somepoint in my life.
+  Collection of musing and ramblings
 baseurl: "" # the subpath of your site, e.g. /blog
 repository: nraghuveer/nraghuveer.github.io
 
