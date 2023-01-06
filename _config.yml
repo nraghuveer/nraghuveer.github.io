@@ -13,9 +13,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Raghuveer
+title: Raghuveer Naraharisetti
 author:
-  name: Raghuveer
+  name: Raghuveer Naraharisetti
   url: "https://nraghuveer.github.io"
 url: "https://nraghuveer.github.io"
 email: raghuveernaraharisetti@gmail.com
