@@ -13,11 +13,11 @@ Repository JSON structure https://docs.github.com/en/rest/reference/repos#get-a-
 
 <ul class="project-list">
     {% for repo in site.github.public_repositories %}
-    {% unless repo.name.in?(["lyra"]) %}
+    {% if repo.name.in?(["lyra"]) %}
     <li>
         {% include repository.html repository=repo %}
     </li>
-    {% endunless %}
+    {% endif %}
     {% endfor %}
 </ul>
 
