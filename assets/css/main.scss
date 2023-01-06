@@ -1,7 +1,12 @@
+---
+# Jekyll needs front matter for SCSS files
+---
+
+
 $sidebar-bg-color: #882d17;
 $sidebar-sticky: false;
 $link-color: $sidebar-bg-color;
-$sidebar-width: 25rem;
+$sidebar-width: 0rem;
 @import "hydeout";
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css);
 
